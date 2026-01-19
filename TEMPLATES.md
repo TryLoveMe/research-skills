@@ -1,216 +1,156 @@
-# Project File Templates
+================================================================================
+TEMPLATE A — Project Brief（项目简报）
+================================================================================
+Title（题目）:
+Stroke type（卒中类型: AIS/ICH/SAH）:
+Stage（阶段: hyperacute/acute/subacute/chronic）:
+Intervention（干预: 药物/化合物/靶点/通路）:
+Comparator（对照: vehicle/standard care/other drug）:
+Evidence scope（证据范围: preclinical/clinical/both）:
+Review type（综述类型: narrative/systematic/meta if feasible）:
+Time range（时间范围）:
+Language（语言）:
+Key outcomes（关键结局）:
+  - Preclinical:
+  - Clinical:
+Key keywords（关键词）:
+Constraints（限制/偏好）:
+Notes（备注）:
 
-## CLAUDE.md Template
+================================================================================
+TEMPLATE B — PICO/PECO（用于系统综述）
+================================================================================
+P / Population（人群/动物/模型）:
+I / Exposure or Intervention（暴露/干预）:
+C / Comparator（对照）:
+O / Outcomes（结局）:
+Study types（研究类型: RCT/observational/animal/in vitro）:
+Exclusion criteria（排除标准）:
 
-```markdown
-# [Topic] Literature Review Writing Guidelines
+================================================================================
+TEMPLATE C — Search Strategy（检索策略）
+================================================================================
+Databases（数据库）:
+  - PubMed/MEDLINE:
+  - Embase:
+  - Web of Science/Scopus (optional):
 
-## Terminology Standardization
+Trial registries（注册库，如含临床证据）:
+  - ClinicalTrials.gov:
+  - (optional) WHO ICTRP:
 
-| Unified Term | Avoid Using |
-|--------------|-------------|
-| [standard term 1] | [variant 1], [variant 2] |
-| [standard term 2] | [variant 1], [variant 2] |
-```
+Concept blocks（概念块）:
+1) Stroke terms（卒中相关）:
+2) Intervention/Target terms（干预/靶点相关）:
+3) Model terms（模型相关，如做预临床）:
+4) Outcomes terms（结局相关，可选）:
 
-## Reference Sources
+PubMed draft query（示例结构）:
+( stroke terms ) AND ( intervention/target terms ) AND ( model terms OR clinical terms )
 
-### ArXiv MCP (Latest Methods)
-```
-Search queries:
-- "[topic] segmentation transformer" (cs.CV, eess.IV)
-- "[topic] deep learning" (cs.LG)
-Date range: 2022-present
-Downloaded papers: [list paper IDs]
-```
+Filters（筛选条件）:
+  - Year range:
+  - Language:
+  - Article types:
+Notes（备注：是否排除 review；是否纳入 conference 等）:
 
-### PubMed MCP (Clinical Literature)
-```
-MeSH queries:
-- "Deep Learning"[MeSH] AND "[domain]"[MeSH]
-- "[method]"[MeSH] AND "diagnosis"[MeSH]
-Filters: Review, Clinical Study
-```
+================================================================================
+TEMPLATE D — PubMed 检索式骨架（填词即可用）
+================================================================================
+# Block 1: Stroke
+("stroke"[Title/Abstract] OR "ischemic stroke"[Title/Abstract] OR "cerebral ischemia"[Title/Abstract]
+ OR "intracerebral hemorrhage"[Title/Abstract] OR "subarachnoid hemorrhage"[Title/Abstract]
+ OR "middle cerebral artery occlusion"[Title/Abstract] OR MCAO[Title/Abstract])
 
-### Zotero Database
-```
-API: http://localhost:23119/api/users/[USER_ID]/
-Collections:
-- [Collection 1]: collections/[KEY]/items
-- [Collection 2]: collections/[KEY]/items
-```
+# Block 2: Target/Drug (fill your terms)
+AND
+("YOUR_DRUG"[Title/Abstract] OR "YOUR_TARGET"[Title/Abstract] OR "YOUR_PATHWAY"[Title/Abstract])
 
-### Literature Categories
-1. **[Category 1]**: [description, N papers]
-2. **[Category 2]**: [description, N papers]
-3. **[Category 3]**: [description, N papers]
+# Block 3: Preclinical model (optional)
+AND
+(animal[Title/Abstract] OR mice[Title/Abstract] OR rat[Title/Abstract] OR OGD[Title/Abstract]
+ OR "oxygen-glucose deprivation"[Title/Abstract])
 
-## Key Methods to Cover
+# Optional: Limit by year/language in PubMed UI
 
-| Category | Methods | Status |
-|----------|---------|--------|
-| [Cat 1] | [Method A], [Method B] | [ ] |
-| [Cat 2] | [Method C], [Method D] | [ ] |
+================================================================================
+TEMPLATE E — Screening Log（筛选记录/排除原因）
+================================================================================
+Screening stages:
+1) Title/Abstract screening
+2) Full-text screening
 
-## Performance Data Summary
+Common exclusion reasons（排除原因分类）:
+- Not stroke / wrong disease
+- Not pharmacological intervention (e.g., surgery/device only)
+- Wrong model / wrong population
+- No relevant outcomes
+- Not original research (review/editorial)
+- Insufficient data (for meta, if applicable)
+- Duplicate / overlapping cohort
 
-| Method | Dataset | Dice | HD95 | Source |
-|--------|---------|------|------|--------|
-| [Method 1] | [Dataset] | 0.XXX | X.XX | [ref] |
+================================================================================
+TEMPLATE F — Preclinical Evidence Extraction Table（预临床抽取表）
+================================================================================
+说明：一篇文献一行；如果一个研究有多个剂量/时间窗，可以拆成多行。
 
-## Quality Checklist
+| Study | Year | Species/strain | Model (tMCAO/pMCAO/ICH etc.) | Sex/age | Comorbidity | Random/Blind | Dose/route/freq | Time-to-tx window | n/group | Primary outcomes | Key results | Mechanism markers | Safety notes |
+|---|---:|---|---|---|---|---|---|---|---:|---|---|---|---|
 
-### Structure
-- [ ] Key Points section (3-5 bullets)
-- [ ] Table per major section
-- [ ] Figure placeholders with captions
+================================================================================
+TEMPLATE G — Clinical Evidence / Trial Table（临床证据/试验表）
+================================================================================
+| Trial/Study | Registry ID | Phase | Design | N | Population | Time window | Co-therapy (tPA/EVT) | Intervention vs control | Primary endpoint | Main result | Safety (sICH/AE) | Notes/subgroups |
+|---|---|---|---|---:|---|---|---|---|---|---|---|---|
 
-### Content
-- [ ] All major methods covered
-- [ ] Limitations for each category
-- [ ] Future directions articulated
+================================================================================
+TEMPLATE H — Mechanism → Evidence Map（机制-证据对照表）
+================================================================================
+| Mechanism node | Target/pathway | Drug examples | Preclinical strength | Clinical strength | Main translation risk |
+|---|---|---|---|---|---|
+| e.g., neuroinflammation | NLRP3 inflammasome | MCC950... | moderate | weak | time window / safety / exposure |
 
-### Language
-- [ ] Hedging language used
-- [ ] Consistent terminology
-- [ ] All claims cited
-```
+Evidence strength suggestion（强度建议）:
+- none / weak / moderate / strong（可在论文中自定义判据）
 
----
+================================================================================
+TEMPLATE I — PK/PD & BBB Penetration Sheet（药代/药效与脑穿透）
+================================================================================
+| Compound | Dose/route | Species | Plasma exposure (Cmax/AUC) | Brain exposure | BBB evidence type | PD marker | Notes (metabolites, transporters) |
+|---|---|---|---|---|---|---|---|
 
-## IMPLEMENTATION_PLAN.md Template
+================================================================================
+TEMPLATE J — Risk-of-Bias Quick Sheet（偏倚/质量快速表）
+================================================================================
+Preclinical（预临床）
+| Study | Randomization | Blinding | Allocation concealment | Sample size rationale | Temp control | Exclusions reported | Conflicts/funding |
+|---|---|---|---|---|---|---|---|
 
-```markdown
-# Implementation Plan: [Review Title]
+Clinical（临床）
+| Trial | Registered | Randomization described | Blinding | Attrition handled | Selective reporting risk | CONSORT items ok | Funding/conflicts |
+|---|---|---|---|---|---|---|---|
 
-## Overview
-- **Topic**: [specific topic]
-- **Target journals**: [journal 1], [journal 2]
-- **Target length**: [word count], [ref count]
+================================================================================
+TEMPLATE K — Translational Gap Paragraph Skeleton（转化差距段落骨架）
+================================================================================
+Although preclinical findings suggest that [drug/target] improves [key outcome] via [mechanism],
+translation to clinical efficacy remains uncertain. Key gaps include:
+(i) alignment of the time-to-treatment window with real-world stroke workflows,
+(ii) confirmation of adequate brain exposure/BBB penetration at tolerated doses,
+(iii) safety risks such as hemorrhagic transformation or systemic adverse effects,
+and (iv) endpoint comparability between animal models and clinical outcomes.
+Future studies should prioritize [two concrete recommendations], ideally with [design features:
+randomization/blinding, clinically relevant time windows, standardized functional outcomes].
 
-## Stage 1: Literature Collection
-**Goal**: Gather comprehensive corpus
-**Status**: Not Started
-
-### ArXiv MCP (Deep Learning Methods)
-- [ ] Search "[topic] segmentation" in cs.CV, eess.IV
-- [ ] Search "[topic] transformer/attention" in cs.CV
-- [ ] Download key papers (target: 50-100)
-- [ ] Extract method details from downloaded papers
-
-### PubMed MCP (Clinical Literature)
-- [ ] Search MeSH: "Deep Learning" AND "[domain]"
-- [ ] Filter by publication type (Review, Clinical Study)
-- [ ] Collect clinical validation studies (target: 30-50)
-
-### Additional Sources
-- [ ] Search IEEE Xplore for [keywords]
-- [ ] Search Google Scholar for [keywords]
-- [ ] Check Zotero existing collections
-
-### Organization
-- [ ] Export all to Zotero
-- [ ] Categorize by method/application
-- [ ] Gap analysis
-
-## Stage 2: Outline Development
-**Goal**: Define paper structure
-**Status**: Not Started
-
-- [ ] Draft section headings
-- [ ] Map literature to sections
-- [ ] Plan comparison tables
-- [ ] Design figure placeholders
-
-## Stage 3: Section 1-2 (Introduction, Datasets)
-**Goal**: Write foundation sections
-**Status**: Not Started
-
-- [ ] 1.1 Clinical Background
-- [ ] 1.2 Technical Challenges
-- [ ] 1.3 Scope and Contributions
-- [ ] 2.1 Public Datasets (Table 1)
-- [ ] 2.2 Evaluation Metrics
-
-## Stage 4: Section 3 (Methods)
-**Goal**: Write method sections
-**Status**: Not Started
-
-- [ ] 3.1 [Category 1]
-- [ ] 3.2 [Category 2]
-- [ ] ...
-- [ ] Method comparison table (Table 2)
-
-## Stage 5: Section 4-5 (Applications, Commercial)
-**Goal**: Write application sections
-**Status**: Not Started
-
-- [ ] 4.1 [Application 1]
-- [ ] 4.2 [Application 2]
-- [ ] 5.1 Commercial products (Table 3)
-- [ ] 5.2 Regulatory landscape
-
-## Stage 6: Section 6-7 (Discussion, Conclusion)
-**Goal**: Write synthesis sections
-**Status**: Not Started
-
-- [ ] 6.1 Current Limitations
-- [ ] 6.2 Future Directions
-- [ ] 7. Conclusion
-
-## Stage 7: Integration & Polish
-**Goal**: Finalize manuscript
-**Status**: Not Started
-
-- [ ] Unify terminology
-- [ ] Cross-reference check
-- [ ] Language polish
-- [ ] Reference formatting
-
-## Key Literature Mapping
-
-| Section | Key Papers |
-|---------|------------|
-| 3.1 | [Paper A], [Paper B] |
-| 3.2 | [Paper C], [Paper D] |
-
-## Literature Sources Summary
-
-| Source | Query/Collection | Papers | Status |
-|--------|------------------|--------|--------|
-| ArXiv | [query 1] | N | [ ] |
-| ArXiv | [query 2] | N | [ ] |
-| PubMed | [MeSH query] | N | [ ] |
-| Zotero | [collection name] | N | [ ] |
-```
-
----
-
-## Comparison Table Templates
-
-### Dataset Table
-```markdown
-**Table 1. Public Datasets for [Task]**
-
-| Dataset | Year | Cases | Annotation Type | Access |
-|---------|------|-------|-----------------|--------|
-| [Name] | 20XX | N | [type] | [link] |
-```
-
-### Method Comparison Table
-```markdown
-**Table 2. Deep Learning Methods for [Task]**
-
-| Reference | Category | Architecture | Dataset | Dice | HD95 | Innovation |
-|-----------|----------|--------------|---------|------|------|------------|
-| [Author] [ref] | [Cat] | [Arch] | [Data] | 0.XXX | X.XX | [1-line summary] |
-```
-
-### Commercial Products Table
-```markdown
-**Table 3. Commercial [Domain] Products**
-
-| Company | Product | Technology | Regulatory | Key Features |
-|---------|---------|------------|------------|--------------|
-| [Name] | [Product] | [Tech] | FDA/CE/NMPA | [features] |
-```
+================================================================================
+TEMPLATE L — Section Outline（成文大纲模板）
+================================================================================
+1. Introduction（疾病负担 + 未满足需求）
+2. Pathophysiology & Target Rationale（机制链条 + 靶点合理性）
+3. Pharmacology Overview（化合物/类别，作用机制，PK/PD，BBB）
+4. Preclinical Evidence（按策略或靶点分节；配预临床表）
+5. Clinical Evidence（按试验/人群/时间窗；配临床表）
+6. Translational Challenges（时间窗、暴露、模型有效性、终点、安全性）
+7. Future Directions（模型、联合治疗、临床试验设计）
+8. Conclusion
+9. References
