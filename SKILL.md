@@ -1,6 +1,6 @@
 ---
-name: medical-imaging-review
-description: Write comprehensive literature reviews for medical imaging AI research. Use when writing survey papers, systematic reviews, or literature analyses on topics like segmentation, detection, classification in CT, MRI, X-ray imaging. Triggers on requests for "review paper", "survey", "literature review", "综述", or mentions of writing academic reviews on deep learning for medical imaging.
+name:stroke-pharmacology-literature-review
+description:Write narrative reviews or PRISMA-style systematic reviews/meta-analyses in stroke pharmacology (ischemic/hemorrhagic stroke). Cover drug targets/mechanisms, PK/PD and BBB penetration, preclinical models (e.g., MCAO) and outcomes, and clinical trial evidence. Provide evidence extraction tables, bias/quality checks (ARRIVE, SYRCLE RoB, STAIR; CONSORT/SPIRIT for trials), and a structured writing workflow
 allowed-tools:
   - Read
   - Write
