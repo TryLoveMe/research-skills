@@ -1,6 +1,9 @@
 ---
-name:stroke-pharmacology-literature-review
-description:Write narrative reviews or PRISMA-style systematic reviews/meta-analyses in stroke pharmacology (ischemic/hemorrhagic stroke). Cover drug targets/mechanisms, PK/PD and BBB penetration, preclinical models (e.g., MCAO) and outcomes, and clinical trial evidence. Provide evidence extraction tables, bias/quality checks (ARRIVE, SYRCLE RoB, STAIR; CONSORT/SPIRIT for trials), and a structured writing workflow
+---
+name: stroke-pharmacology-literature-review
+description: Write narrative reviews or PRISMA-style systematic reviews/meta-analyses in stroke pharmacology (ischemic/hemorrhagic stroke). Cover drug targets/mechanisms, PK/PD and BBB penetration, preclinical models (e.g., MCAO) and outcomes, and clinical trial evidence. Provide evidence extraction tables, bias/quality checks (ARRIVE, SYRCLE RoB, STAIR; CONSORT/SPIRIT for trials), and a structured writing workflow.
+---
+
 allowed-tools:
   - Read
   - Write
